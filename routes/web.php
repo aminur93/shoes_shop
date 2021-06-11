@@ -27,12 +27,17 @@ Route::group(['middleware' => 'auth'], function (){
 
     /*category routes start*/
     Route::get('category','Admin\CategoryController@index')->name('category');
+    Route::get('category/getData','Admin\CategoryController@getData')->name('category.getData');
     Route::get('category/create','Admin\CategoryController@create')->name('category.create');
     Route::post('category/store','Admin\CategoryController@store')->name('category.store');
-    Route::get('category/edit','Admin\CategoryController@edit')->name('category.edit');
-    Route::post('category/update','Admin\CategoryController@update')->name('category.update');
+    Route::get('category/edit/{id}','Admin\CategoryController@edit')->name('category.edit');
+    Route::post('category/update/{id}','Admin\CategoryController@update')->name('category.update');
     Route::delete('category/destroy/{id}','Admin\CategoryController@destroy')->name('category.destroy');
     /*category routes end*/
+
+    /*products routes start*/
+
+    /*products routes end*/
 
 });
 
