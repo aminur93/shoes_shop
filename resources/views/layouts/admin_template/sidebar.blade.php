@@ -35,7 +35,7 @@
                     <a href="#" class="nav-link {{ Request::routeIs('category','category.create','category.edit') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-list-alt"></i>
                         <p>
-                            News Category
+                            Category
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -44,6 +44,43 @@
                             <a href="{{ route('category') }}" class="nav-link {{ Request::routeIs('category','category.create','category.edit') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Category</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview {{ Request::routeIs('products','products.create','products.edit','product_gallery','gallery_image_create','gallery_image_edit') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::routeIs('products','products.create','products.edit','product_gallery','gallery_image_create','gallery_image_edit') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-shopping-bag"></i>
+                        <p>
+                            Products
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('products') }}" class="nav-link {{ Request::routeIs('products','products.create','products.edit','product_gallery','gallery_image_create','gallery_image_edit') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Products</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item has-treeview {{ Request::routeIs('product_stock','product_stock.create','product_stock.edit') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::routeIs('product_stock','product_stock.create','product_stock.edit') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-shopping-bag"></i>
+                        <p>
+                            Products Stock
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('product_stock') }}" class="nav-link {{ Request::routeIs('product_stock','product_stock.create','product_stock.edit') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Stock</p>
                             </a>
                         </li>
                     </ul>
