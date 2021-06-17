@@ -72,6 +72,33 @@ Route::group(['middleware' => 'auth'], function (){
     Route::delete('product_stock/destroy/{id}','Admin\ProductStockController@destroy')->name('product_stock.destroy');
     /*product stock route end*/
 
+
+    /*products slider route start*/
+    Route::get('slider','Admin\ProductSliderController@index')->name('slider');
+    Route::get('slider/getData','Admin\ProductSliderController@getData')->name('slider.getData');
+    Route::get('slider/create','Admin\ProductSliderController@create')->name('slider.create');
+    Route::post('slider/store','Admin\ProductSliderController@store')->name('slider.store');
+    Route::get('slider/edit/{id}','Admin\ProductSliderController@edit')->name('slider.edit');
+    Route::post('slider/update/{id}','Admin\ProductSliderController@update')->name('slider.update');
+    Route::delete('slider/destroy/{id}','Admin\ProductSliderController@destroy')->name('slider.destroy');
+    /*products slider route end*/
+
+
+    /*user routes start*/
+    Route::get('user','Admin\UserController@index')->name('user');
+    Route::get('user/getData','Admin\UserController@getData')->name('user.getData');
+    Route::get('user/create','Admin\UserController@create')->name('user.create');
+    Route::post('user/store','Admin\UserController@store')->name('user.store');
+    Route::get('user/edit/{id}','Admin\UserController@edit')->name('user.edit');
+    Route::post('user/update/{id}','Admin\UserController@update')->name('user.update');
+    Route::delete('user/destroy/{id}','Admin\UserController@destroy')->name('user.destroy');
+
+    Route::get('profile','Admin\UserController@profile')->name('profile');
+    Route::post('profile_update','Admin\UserController@profileUpdate')->name('profile_update');
+    Route::get('change_password','Admin\UserController@ChangePassword')->name('change_password');
+    Route::post('password_update','Admin\UserController@updatePassword')->name('password_update');
+    /*user routes end*/
+
 });
 
 

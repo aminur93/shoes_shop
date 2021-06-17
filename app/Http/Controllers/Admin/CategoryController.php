@@ -89,7 +89,7 @@ class CategoryController extends Controller
                         //Resize Image
                         Image::make($image_tmp)->save($original_image_path);
                         Image::make($image_tmp)->resize(1110,680)->save($large_image_path);
-                        Image::make($image_tmp)->resize(5200,329)->save($medium_image_path);
+                        Image::make($image_tmp)->resize(520,329)->save($medium_image_path);
                         Image::make($image_tmp)->resize(100,75)->save($small_image_path);
 
                         $category->category_image = $filename;

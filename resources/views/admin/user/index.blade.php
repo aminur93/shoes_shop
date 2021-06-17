@@ -1,7 +1,7 @@
 @extends('layouts.admin_template.master')
 
 @section('page')
-    Product Image Gallery
+    Category
 @endsection
 
 @push('css')
@@ -9,8 +9,6 @@
 
 @section('content')
     <div class="row">
-        <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}">
-
         <div class="col-md-12">
             <div id="success_message"></div>
 
@@ -18,9 +16,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <a href="{{ route('gallery_image_create','') }}/{{ $product->id }}" class="btn btn-sm btn-primary  float-right"><i class="fas fa-plus"></i> Add News Category</a>
-
-                    <a href="{{ route('products') }}" class="btn btn-sm btn-default  float-right" style="margin-right: 5px"><i class="fas fa-arrow-left"></i> Back</a>
+                    <a href="{{ route('user.create') }}" class="btn btn-sm btn-primary  float-right"><i class="fas fa-plus"></i> Add News Category</a>
                     <h3 class="card-title">@yield('page')</h3>
                 </div>
                 <!-- /.card-header -->
@@ -29,16 +25,16 @@
                         <thead>
                         <tr>
                             <th>#Sl NO</th>
-                            <th>Image</th>
                             <th>Name</th>
+                            <th>Email</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
                             <th>#Sl NO</th>
-                            <th>Image</th>
                             <th>Name</th>
+                            <th>Email</th>
                             <th>Action</th>
                         </tr>
                         </tfoot>
@@ -55,8 +51,6 @@
 
     $(document).ready(function(){
 
-        var id = $("#product_id").val();
-
         $('#data-table').DataTable({
             processing: true,
             responsive: true,
@@ -64,17 +58,16 @@
             pagingType: "full_numbers",
             dom: "<'row'<'col-sm-2'l><'col-sm-4'i><'col-sm-3 text-center'B><'col-sm-3'f>>tp",
             ajax: {
-                url: '{!!  route('gallery_image') !!}',
+                url: '{!!  route('user.getData') !!}',
                 type: "GET",
-                data: {id:id},
                 headers: {
                     'X-CSRF-TOKEN': '{{ csrf_token() }}'
                 }
             },
             columns: [
                 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-                {data: 'image', name: 'image'},
                 {data: 'name', name: 'name'},
+                {data: 'email', name: 'email'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ],
 
