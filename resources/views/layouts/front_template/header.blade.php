@@ -1,4 +1,4 @@
-<header class="header-style-5">
+<header class="header-style-5" id="cart_item">
     <div class="mobile-fix-option"></div>
     <div class="top-header top-header-theme">
         <div class="container">
@@ -18,8 +18,14 @@
                         <li class="onhover-dropdown mobile-account"> <i class="fa fa-user" aria-hidden="true"></i>
                             My Account
                             <ul class="onhover-show-div">
-                                <li><a href="">Login</a></li>
-                                <li><a href="">register</a></li>
+                                @if(auth('customer')->user())
+                                    <li><a href="">Profile</a></li>
+                                    <li><a href="{{ route('customer_logout') }}">Logout</a></li>
+                                @else
+                                <li><a href="{{ route('customer.login') }}">Login</a></li>
+                                <li><a href="{{ route('customer.register') }}">register</a></li>
+                                @endif
+
                             </ul>
                         </li>
                     </ul>
@@ -39,7 +45,7 @@
                             </a>
                         </div>
                         <div class="brand-logo">
-                            <a href=""><img src="{{ asset('img/main_logo.png') }}"
+                            <a href="{{ route('kites') }}"><img src="{{ asset('assets/admin/uploads/logo/original/'.$logo->logo_image) }}"
                                             class="img-fluid blur-up lazyload" alt="" width="179px" height="34px"></a>
                         </div>
                     </div>
@@ -84,70 +90,22 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="onhover-div mobile-setting">
-                                        <div><img src="{{ asset('assets/front_end/assets/images/icon/setting.png') }}"
-                                                  class="img-fluid blur-up lazyload" alt=""> <i
-                                                    class="ti-settings"></i></div>
-                                        <div class="show-div setting">
-                                            <h6>language</h6>
-                                            <ul>
-                                                <li><a href="#">english</a></li>
-                                                <li><a href="#">french</a></li>
-                                            </ul>
-                                            <h6>currency</h6>
-                                            <ul class="list-inline">
-                                                <li><a href="#">euro</a></li>
-                                                <li><a href="#">rupees</a></li>
-                                                <li><a href="#">pound</a></li>
-                                                <li><a href="#">doller</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
                                     <li class="onhover-div mobile-cart">
                                         <div><img src="{{ asset('assets/front_end/assets/images/icon/cart.png') }}"
                                                   class="img-fluid blur-up lazyload" alt=""> <i
                                                     class="ti-shopping-cart"></i></div>
-                                        <span class="cart_qty_cls">2</span>
+                                        <span class="cart_qty_cls" id="cart_count"></span>
                                         <ul class="show-div shopping-cart">
-                                            <li>
-                                                <div class="media">
-                                                    <a href="#"><img alt="" class="me-3"
-                                                                     src="{{ asset('assets/front_end/assets/images/fashion/product/1.jpg') }}"></a>
-                                                    <div class="media-body">
-                                                        <a href="#">
-                                                            <h4>item name</h4>
-                                                        </a>
-                                                        <h4><span>1 x $ 299.00</span></h4>
-                                                    </div>
-                                                </div>
-                                                <div class="close-circle"><a href="#"><i class="fa fa-times"
-                                                                                         aria-hidden="true"></i></a></div>
-                                            </li>
-                                            <li>
-                                                <div class="media">
-                                                    <a href="#"><img alt="" class="me-3"
-                                                                     src="{{ asset('assets/front_end/assets/images/fashion/product/2.jpg') }}"></a>
-                                                    <div class="media-body">
-                                                        <a href="#">
-                                                            <h4>item name</h4>
-                                                        </a>
-                                                        <h4><span>1 x $ 299.00</span></h4>
-                                                    </div>
-                                                </div>
-                                                <div class="close-circle"><a href="#"><i class="fa fa-times"
-                                                                                         aria-hidden="true"></i></a></div>
-                                            </li>
-                                            <li>
-                                                <div class="total">
-                                                    <h5>subtotal : <span>$299.00</span></h5>
-                                                </div>
-                                            </li>
+
+                                            <div id="cart_data"></div>
+
                                             <li>
                                                 <div class="buttons">
-                                                    <a href="" class="view-cart">viewcart</a>
+                                                    <a href="{{ route('cart') }}" class="view-cart">view cart</a>
                                                     <a href="#" class="checkout">checkout</a>
                                                 </div>
                                             </li>
+
                                         </ul>
                                     </li>
                                 </ul>
@@ -158,6 +116,7 @@
             </div>
         </div>
     </div>
+
     <div class="bottom-part">
         <div class="container">
             <div class="row">

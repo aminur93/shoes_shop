@@ -13,9 +13,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'KitesController@index')->name('kites');
+Route::get('/details/{id}', 'KitesController@details')->name('details');
+Route::post('/get_quantity', 'KitesController@getQuantity')->name('get_quantity');
+
+Route::group(['middleware' => 'customer'], function() {
+
+    Route::get('cart','CartController@index')->name('cart');
+    Route::post('cart/update','CartController@update')->name('cart.update');
+    Route::post('cart/remove','CartController@remove')->name('cart.remove');
+
+    /*check out route start*/
+    Route::get('check_out','CheckOutController@checkOut')->name('check_out');
+    Route::get('thank','CheckOutController@thank')->name('thank');
+    Route::post('order_place','OrderController@orderPlace')->name('order_place');
+    Route::post('order','OrderController@order')->name('order');
+    /*check out route end*/
 });
+
+/*add to cart route start*/
+
+Route::post('add_to_cart','CartController@addToCart')->name('add_to_cart');
+Route::get('get_cart','CartController@getCartData')->name('get_cart');
+/*add to cart route end*/
+
+/*customer login routes start*/
+Route::get('customer/login','CustomerController@login')->name('customer.login');
+Route::post('customer/login/store','CustomerController@loginStore')->name('customer.login_store');
+Route::get('customer_logout','CustomerController@customerLogout')->name('customer_logout');
+Route::get('customer/register','CustomerController@register')->name('customer.register');
+Route::post('customer/register/store','CustomerController@registerStore')->name('register.store');
+/*customer login routes end*/
 
 Auth::routes();
 
@@ -98,6 +126,28 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('change_password','Admin\UserController@ChangePassword')->name('change_password');
     Route::post('password_update','Admin\UserController@updatePassword')->name('password_update');
     /*user routes end*/
+
+    /*logo setup route start*/
+    Route::get('logo','Admin\LogoController@index')->name('logo');
+    Route::get('logo/getData','Admin\LogoController@getData')->name('logo.getData');
+    Route::get('logo/create','Admin\LogoController@create')->name('logo.create');
+    Route::post('logo/store','Admin\LogoController@store')->name('logo.store');
+    Route::get('logo/edit/{id}','Admin\LogoController@edit')->name('logo.edit');
+    Route::post('logo/update/{id}','Admin\LogoController@update')->name('logo.update');
+    Route::delete('logo/destroy/{id}','Admin\LogoController@destroy')->name('logo.destroy');
+    Route::get('logo/status_change/{id}', 'Admin\LogoController@status_change')->name('logo.status_change');
+    /*logo setup route end*/
+
+    /*banner setup route start*/
+    Route::get('banner','Admin\BannerController@index')->name('banner');
+    Route::get('banner/getData','Admin\BannerController@getData')->name('banner.getData');
+    Route::get('banner/create','Admin\BannerController@create')->name('banner.create');
+    Route::post('banner/store','Admin\BannerController@store')->name('banner.store');
+    Route::get('banner/edit/{id}','Admin\BannerController@edit')->name('banner.edit');
+    Route::post('banner/update/{id}','Admin\BannerController@update')->name('banner.update');
+    Route::delete('banner/destroy/{id}','Admin\BannerController@destroy')->name('banner.destroy');
+    Route::get('banner/status_change/{id}', 'Admin\BannerController@status_change')->name('banner.status_change');
+    /*banner setup route end*/
 
 });
 

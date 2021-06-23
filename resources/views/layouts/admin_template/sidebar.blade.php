@@ -124,6 +124,32 @@
                 </li>
 
 
+                <li class="nav-item has-treeview {{ Request::routeIs('logo','logo.create','logo.edit','banner','banner.create','banner.edit') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::routeIs('logo','logo.create','logo.edit','banner','banner.create','banner.edit') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Settings
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('logo') }}" class="nav-link {{ Request::routeIs('logo','logo.create','logo.edit') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Logo</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('banner') }}" class="nav-link {{ Request::routeIs('banner','banner.create','banner.edit') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Banner</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

@@ -9,6 +9,7 @@
 
 
 @section('content')
+
     <!-- home section -->
     <section class="small-section pt-res-0">
         <div class="container">
@@ -21,112 +22,28 @@
                                                                                           aria-hidden="true"></i> Back</div>
                             </div>
                             <ul id="sub-menu" class="sm pixelstrap sm-vertical">
-                                <li> <a href="#"><img src="{{ asset('assets/front_end/assets/images/icon/vegetables/1.jpg') }}" class="img-fluid me-2" alt="">fruits & vegetable</a>
-                                    <ul class="mega-menu clothing-menu">
-                                        <li>
-                                            <div class="row m-0">
-                                                <div class="col-xl-4">
-                                                    <div class="link-section">
-                                                        <h5>women's fashion</h5>
-                                                        <ul>
-                                                            <li><a href="#">dresses</a></li>
-                                                            <li><a href="#">skirts</a></li>
-                                                            <li><a href="#">westarn wear</a></li>
-                                                            <li><a href="#">ethic wear</a></li>
-                                                            <li><a href="#">sport wear</a></li>
-                                                        </ul>
-                                                        <h5>men's fashion</h5>
-                                                        <ul>
-                                                            <li><a href="#">sports wear</a></li>
-                                                            <li><a href="#">western wear</a></li>
-                                                            <li><a href="#">ethic wear</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4">
-                                                    <div class="link-section">
-                                                        <h5>accessories</h5>
-                                                        <ul>
-                                                            <li><a href="#">fashion jewellery</a></li>
-                                                            <li><a href="#">caps and hats</a></li>
-                                                            <li><a href="#">precious jewellery</a></li>
-                                                            <li><a href="#">necklaces</a></li>
-                                                            <li><a href="#">earrings</a></li>
-                                                            <li><a href="#">wrist wear</a></li>
-                                                            <li><a href="#">ties</a></li>
-                                                            <li><a href="#">cufflinks</a></li>
-                                                            <li><a href="#">pockets squares</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4">
-                                                    <a href="#" class="mega-menu-banner"><img
-                                                                src="../assets/images/mega-menu/fashion.jpg" alt=""
-                                                                class="img-fluid blur-up lazyload"></a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                @foreach($category as $cat)
+                                <li><a href="#">
+                                        <img src="{{ asset('assets/admin/uploads/category/small/'.$cat->category_image) }}" class="img-fluid me-2" alt="">
+                                        {{ $cat->category_name }}
+                                    </a>
                                 </li>
-                                <li><a href="#"><img src="{{ asset('assets/front_end/assets/images/icon/vegetables/7.jpg') }}" class="img-fluid me-2" alt="">beauty product</a></li>
-                                <li><a href="#"><img src="{{ asset('assets/front_end/assets/images/icon/vegetables/8.jpg') }}" class="img-fluid me-2" alt="">gourment</a></li>
-                                <li><a href="#"><img src="{{ asset('assets/front_end/assets/images/icon/vegetables/9.jpg') }}" class="img-fluid me-2" alt="">kitchen, garden</a></li>
-                                <li><a href="#"><img src="{{ asset('assets/front_end/assets/images/icon/vegetables/9.jpg') }}" class="img-fluid me-2" alt="">kitchen, garden</a></li>
-                                <li><a href="#"><img src="{{ asset('assets/front_end/assets/images/icon/vegetables/9.jpg') }}" class="img-fluid me-2" alt="">kitchen, garden</a></li>
-                                <li><a href="#"><img src="{{ asset('assets/front_end/assets/images/icon/vegetables/9.jpg') }}" class="img-fluid me-2" alt="">kitchen, garden</a></li>
-                                <li><a href="#"><img src="{{ asset('assets/front_end/assets/images/icon/vegetables/9.jpg') }}" class="img-fluid me-2" alt="">kitchen, garden</a></li>
-                                <li><a href="#"><img src="{{ asset('assets/front_end/assets/images/icon/vegetables/9.jpg') }}" class="img-fluid me-2" alt="">kitchen, garden</a></li>
+                                @endforeach
                             </ul>
                         </nav>
                     </div>
                 </div>
+
                 <div class="col-xl-9">
                     <section class="pt-0 small-slider">
                         <div class="slider-animate home-slider">
+                            @foreach($slider as $s)
                             <div>
                                 <div class="home height-apply">
-                                    <img src="{{ asset('assets/front_end/assets/images/vegetables/banner/1.jpg') }}" alt=""
-                                         class="bg-img blur-up lazyload">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="slider-contain px-padding height-apply">
-                                                    <div>
-                                                        <h4 class="animated" data-animation-in="fadeInUp">save 30%</h4>
-                                                        <h1 class="animated" data-animation-in="fadeInUp"
-                                                            data-delay-in="0.3">vegetables</h1><a href="#"
-                                                                                                  class="btn btn-solid animated" data-animation-in="fadeInUp"
-                                                                                                  data-delay-in="0.5">shop
-                                                            now</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <img src="{{ asset('assets/admin/uploads/slider/large/'.$s->slider_image) }}" alt="" class="bg-img blur-up lazyload">
                                 </div>
                             </div>
-                            <div>
-                                <div class="home height-apply">
-                                    <img src="{{ asset('assets/front_end/assets/images/vegetables/banner/2.jpg') }}" alt=""
-                                         class="bg-img blur-up lazyload">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="slider-contain px-padding height-apply">
-                                                    <div>
-                                                        <h4 class="animated" data-animation-in="fadeInUp">save 30%</h4>
-                                                        <h1 class="animated" data-animation-in="fadeInUp"
-                                                            data-delay-in="0.3">grocery</h1><a href="#"
-                                                                                               class="btn btn-solid animated" data-animation-in="fadeInUp"
-                                                                                               data-delay-in="0.5">shop
-                                                            now</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </section>
                 </div>
@@ -543,87 +460,46 @@
 
         <div class="container">
             <div class="row partition2">
+                @foreach($latest_category as $lc)
                 <div class="col-md-6">
                     <a href="#">
                         <div class="collection-banner">
                             <div class="img-part">
-                                <img src="{{ asset('assets/front_end/assets/images/vegetables/banner/3.jpg') }}"
+                                <img src="{{ asset('assets/admin/uploads/category/original/'.$lc->category_image) }}"
                                      class="img-fluid blur-up lazyload bg-img" alt="">
                             </div>
                             <div class="contain-banner content-bg">
                                 <div>
-                                    <h2>fresh</h2>
+                                    <h2>{{ $lc->category_name }}</h2>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-6">
-                    <a href="#">
-                        <div class="collection-banner">
-                            <div class="img-part">
-                                <img src="{{ asset('assets/front_end/assets/images/vegetables/banner/4.jpg') }}"
-                                     class="img-fluid blur-up lazyload bg-img" alt="">
-                            </div>
-                            <div class="contain-banner content-bg">
-                                <div>
-                                    <h2>juices</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                @endforeach
             </div>
         </div>
 
         <div class="banner-goggles banner-padding ratio2_1">
             <div class="container">
                 <div class="row partition3">
+                    @foreach($sell_category as $sc)
                     <div class="col-md-4">
                         <a href="#">
                             <div class="collection-banner p-right">
                                 <div class="img-part">
-                                    <img src="{{ asset('assets/front_end/assets/images/vegetables/banner/5.jpg') }}"
+                                    <img src="{{ asset('assets/admin/uploads/category/original/'.$sc->category_image) }}"
                                          class="img-fluid blur-up lazyload bg-img" alt="">
                                 </div>
                                 <div class="contain-banner content-bg banner-3">
                                     <div>
-                                        <h2>fruits</h2>
+                                        <h2>{{ $sc->category_name }}</h2>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-4">
-                        <a href="#">
-                            <div class="collection-banner p-right">
-                                <div class="img-part">
-                                    <img src="{{ asset('assets/front_end/assets/images/vegetables/banner/6.jpg') }}"
-                                         class="img-fluid blur-up lazyload bg-img" alt="">
-                                </div>
-                                <div class="contain-banner content-bg banner-3">
-                                    <div>
-                                        <h2>veggies</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="#">
-                            <div class="collection-banner p-right">
-                                <div class="img-part">
-                                    <img src="{{ asset('assets/front_end/assets/images/vegetables/banner/7.jpg') }}"
-                                         class="img-fluid blur-up lazyload bg-img" alt="">
-                                </div>
-                                <div class="contain-banner content-bg banner-3">
-                                    <div>
-                                        <h2>herbs</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                        @endforeach
                 </div>
             </div>
         </div>
@@ -632,7 +508,7 @@
     <!-- collection banner end -->
 
 
-    <!-- Tab product -->
+    <!-- recomendation product -->
     <section class="addtocart_count ratio_square bg-title wo-bg">
         <div class="container">
             <div class="row">
@@ -641,890 +517,83 @@
 
                         <div class="bg-title-part title-basic">
                             <h2 class="title font-fraunces">RECOMMENDATIONS FOR YOU</h2>
-                            <ul class="tabs tab-title">
-                                <li class="current">
-                                    <a href="">New Products</a>
-                                </li>
-                                <li class="">
-                                    <a href="">Featured Products</a>
-                                </li>
-                            </ul>
                         </div>
 
                         <div class="tab-content-cls">
+
                             <div id="tab-4" class="tab-content active default">
                                 <div class="five-product no-slider row">
+                                    @foreach($product as $p)
                                     <div class="product-box product-wrap product-style-1">
                                         <div class="img-wrapper">
-                                            <div class="lable-block"><span class="lable3">new</span> <span
-                                                        class="lable4">on
-                                                    sale</span></div>
+                                            <div class="lable-block"><span class="lable3">new</span> <span class="lable4">on sale</span></div>
                                             <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/11.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
+                                                <a href="{{ route('details','') }}/{{ $p->id }}"><img src="{{ asset('assets/admin/uploads/product/original/'.$p->image) }}" class="img-fluid blur-up lazyload bg-img" alt=""></a>
                                             </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
+
                                             <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
+                                                <button class="add-button add_cart details_direction" rel="{{ $p->id }}" title="Add to cart">
+                                                    Details
                                                 </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
                                             </div>
+
                                         </div>
                                         <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
+                                            <a href="{{ route('details','') }}/{{ $p->id }}">
+                                                <h6>{{ $p->name }}</h6>
                                             </a>
-                                            <h4>$500.00 <del>$600.00</del></h4>
+                                            <h4>&#2547; {{ $p->price }}</h4>
                                         </div>
                                     </div>
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/12.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/13.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/14.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="lable-block"><span class="lable3">new</span> <span
-                                                        class="lable4">on
-                                                    sale</span></div>
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/15.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="lable-block"><span class="lable3">new</span> <span
-                                                        class="lable4">on
-                                                    sale</span></div>
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/16.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00 <del>$600.00</del></h4>
-                                        </div>
-                                    </div>
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="lable-block"><span class="lable3">new</span> <span
-                                                        class="lable4">on
-                                                    sale</span></div>
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/11.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00 <del>$600.00</del></h4>
-                                        </div>
-                                    </div>
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/12.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/13.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/14.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
-                            <div id="tab-5" class="tab-content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tab product end -->
+
+    <!-- fature product -->
+    <section class="addtocart_count ratio_square bg-title wo-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="theme-tab">
+
+                        <div class="bg-title-part title-basic">
+                            <h2 class="title font-fraunces">FEATURED FOR YOU</h2>
+                        </div>
+
+                        <div class="tab-content-cls">
+
+                            <div id="tab-4" class="tab-content active default">
                                 <div class="five-product no-slider row">
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="lable-block"><span class="lable3">new</span> <span
-                                                        class="lable4">on
-                                                    sale</span></div>
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/11.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
+                                    @foreach($feature_product as $p)
+                                        <div class="product-box product-wrap product-style-1">
+                                            <div class="img-wrapper">
+                                                <div class="lable-block"><span class="lable3">new</span> <span class="lable4">on sale</span></div>
+                                                <div class="front">
+                                                    <a href=""><img src="{{ asset('assets/admin/uploads/product/original/'.$p->image) }}" class="img-fluid blur-up lazyload bg-img" alt=""></a>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00 <del>$600.00</del></h4>
-                                        </div>
-                                    </div>
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/12.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/13.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/14.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
 
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="lable-block"><span class="lable3">new</span> <span
-                                                        class="lable4">on
-                                                    sale</span></div>
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="../assets/images/vegetables/pro/15.jpg"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
+                                                <div class="addtocart_btn">
+                                                    <button class="add-button add_cart" title="Add to cart">
+                                                        Details
+                                                    </button>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
 
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="lable-block"><span class="lable3">new</span> <span
-                                                        class="lable4">on
-                                                    sale</span></div>
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="../assets/images/vegetables/pro/16.jpg"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
                                             </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
+                                            <div class="product-detail text-center">
+                                                <a href="">
+                                                    <h6>{{ $p->name }}</h6>
+                                                </a>
+                                                <h4>&#2547; {{ $p->price }}</h4>
                                             </div>
                                         </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00 <del>$600.00</del></h4>
-                                        </div>
-                                    </div>
-
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="lable-block"><span class="lable3">new</span> <span
-                                                        class="lable4">on
-                                                    sale</span></div>
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/11.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00 <del>$600.00</del></h4>
-                                        </div>
-                                    </div>
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/12.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/13.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
-                                    <div class="product-box product-wrap product-style-1">
-                                        <div class="img-wrapper">
-                                            <div class="front">
-                                                <a href="product-page(no-sidebar).html"><img
-                                                            src="{{ asset('assets/front_end/assets/images/vegetables/pro/14.jpg') }}"
-                                                            class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                            </div>
-                                            <div class="cart-info cart-wrap">
-                                                <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                                        aria-hidden="true"></i></a>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                                   title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                                <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                                          aria-hidden="true"></i></a>
-                                            </div>
-                                            <div class="addtocart_btn">
-                                                <button class="add-button add_cart" title="Add to cart">
-                                                    Add to Cart
-                                                </button>
-                                                <div class="qty-box cart_qty">
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                                data-type="minus" data-field="">
-                                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                                        </button>
-                                                        <input type="text" name="quantity"
-                                                               class="form-control input-number qty-input" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                                data-type="plus" data-field="">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail text-center">
-                                            <a href="product-page(no-sidebar).html">
-                                                <h6>Slim Fit Cotton Shirt</h6>
-                                            </a>
-                                            <h4>$500.00</h4>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -1539,12 +608,12 @@
     <!-- banner section start -->
     <section class="container">
         <div class="full-banner small-banner p-left">
-            <img src="{{ asset('assets/front_end/assets/images/vegetables/banner/10.jpg') }}" alt="" class="bg-img blur-up lazyload">
+            <img src="{{ asset('assets/admin/uploads/banner/original/'.$banner->banner_image) }}" alt="" class="bg-img blur-up lazyload">
             <div class="container">
                 <div class="row">
                     <div class="col">
                         <div class="banner-contain app-detail">
-                            <h3 class="font-fraunces">huge saving</h3>
+                            <h3 class="font-fraunces">{{ $banner->banner_name }}</h3>
                             <h4>special offer</h4>
                         </div>
                     </div>
@@ -1566,272 +635,83 @@
                 </div>
                 <div class="col-12">
                     <div class="product-5 product-m no-arrow">
+                        @foreach($new_arrival as $na)
                         <div class="product-box product-wrap product-style-1">
                             <div class="img-wrapper">
-                                <div class="lable-block"><span class="lable3">new</span> <span class="lable4">on
-                                        sale</span></div>
+                                <div class="lable-block"><span class="lable3">new</span> <span class="lable4">on sale</span></div>
                                 <div class="front">
-                                    <a href="product-page(no-sidebar).html"><img
-                                                src="{{ asset('assets/front_end/assets/images/vegetables/pro/11.jpg') }}"
+                                    <a href="{{ route('details','') }}/{{ $na->id }}"><img
+                                                src="{{ asset('assets/admin/uploads/product/original/'.$na->image) }}"
                                                 class="img-fluid blur-up lazyload bg-img" alt=""></a>
                                 </div>
-                                <div class="cart-info cart-wrap">
-                                    <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                            aria-hidden="true"></i></a>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                       title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                    <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                              aria-hidden="true"></i></a>
-                                </div>
                                 <div class="addtocart_btn">
-                                    <button class="add-button add_cart" title="Add to cart">
-                                        Add to Cart
+                                    <button class="add-button add_cart details_direction" rel="{{ $na->id }}" title="Add to cart">
+                                        Details
                                     </button>
-                                    <div class="qty-box cart_qty">
-                                        <div class="input-group">
-                                            <button type="button" class="btn quantity-left-minus" data-type="minus"
-                                                    data-field="">
-                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                            </button>
-                                            <input type="text" name="quantity"
-                                                   class="form-control input-number qty-input" value="1">
-                                            <button type="button" class="btn quantity-right-plus" data-type="plus"
-                                                    data-field="">
-                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="product-detail text-center">
-                                <a href="product-page(no-sidebar).html">
-                                    <h6>Slim Fit Cotton Shirt</h6>
+                                <a href="{{ route('details','') }}/{{ $na->id }}">
+                                    <h6>{{ $na->name }}</h6>
                                 </a>
-                                <h4>$500.00 <del>$600.00</del></h4>
+                                <h4>&#2547; {{ $na->price }}</h4>
                             </div>
                         </div>
-                        <div class="product-box product-wrap product-style-1">
-                            <div class="img-wrapper">
-                                <div class="front">
-                                    <a href="product-page(no-sidebar).html"><img
-                                                src="{{ asset('assets/front_end/assets/images/vegetables/pro/12.jpg') }}"
-                                                class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                </div>
-                                <div class="cart-info cart-wrap">
-                                    <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                            aria-hidden="true"></i></a>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                       title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                    <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                              aria-hidden="true"></i></a>
-                                </div>
-                                <div class="addtocart_btn">
-                                    <button class="add-button add_cart" title="Add to cart">
-                                        Add to Cart
-                                    </button>
-                                    <div class="qty-box cart_qty">
-                                        <div class="input-group">
-                                            <button type="button" class="btn quantity-left-minus" data-type="minus"
-                                                    data-field="">
-                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                            </button>
-                                            <input type="text" name="quantity"
-                                                   class="form-control input-number qty-input" value="1">
-                                            <button type="button" class="btn quantity-right-plus" data-type="plus"
-                                                    data-field="">
-                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-detail text-center">
-                                <a href="product-page(no-sidebar).html">
-                                    <h6>Slim Fit Cotton Shirt</h6>
-                                </a>
-                                <h4>$500.00</h4>
-                            </div>
-                        </div>
-                        <div class="product-box product-wrap product-style-1">
-                            <div class="img-wrapper">
-                                <div class="front">
-                                    <a href="product-page(no-sidebar).html"><img
-                                                src="{{ asset('assets/front_end/assets/images/vegetables/pro/13.jpg') }}"
-                                                class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                </div>
-                                <div class="cart-info cart-wrap">
-                                    <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                            aria-hidden="true"></i></a>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                       title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                    <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                              aria-hidden="true"></i></a>
-                                </div>
-                                <div class="addtocart_btn">
-                                    <button class="add-button add_cart" title="Add to cart">
-                                        Add to Cart
-                                    </button>
-                                    <div class="qty-box cart_qty">
-                                        <div class="input-group">
-                                            <button type="button" class="btn quantity-left-minus" data-type="minus"
-                                                    data-field="">
-                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                            </button>
-                                            <input type="text" name="quantity"
-                                                   class="form-control input-number qty-input" value="1">
-                                            <button type="button" class="btn quantity-right-plus" data-type="plus"
-                                                    data-field="">
-                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-detail text-center">
-                                <a href="product-page(no-sidebar).html">
-                                    <h6>Slim Fit Cotton Shirt</h6>
-                                </a>
-                                <h4>$500.00</h4>
-                            </div>
-                        </div>
-                        <div class="product-box product-wrap product-style-1">
-                            <div class="img-wrapper">
-                                <div class="front">
-                                    <a href="product-page(no-sidebar).html"><img
-                                                src="{{ asset('assets/front_end/assets/images/vegetables/pro/14.jpg') }}"
-                                                class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                </div>
-                                <div class="cart-info cart-wrap">
-                                    <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                            aria-hidden="true"></i></a>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                       title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                    <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                              aria-hidden="true"></i></a>
-                                </div>
-                                <div class="addtocart_btn">
-                                    <button class="add-button add_cart" title="Add to cart">
-                                        Add to Cart
-                                    </button>
-                                    <div class="qty-box cart_qty">
-                                        <div class="input-group">
-                                            <button type="button" class="btn quantity-left-minus" data-type="minus"
-                                                    data-field="">
-                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                            </button>
-                                            <input type="text" name="quantity"
-                                                   class="form-control input-number qty-input" value="1">
-                                            <button type="button" class="btn quantity-right-plus" data-type="plus"
-                                                    data-field="">
-                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-detail text-center">
-                                <a href="product-page(no-sidebar).html">
-                                    <h6>Slim Fit Cotton Shirt</h6>
-                                </a>
-                                <h4>$500.00</h4>
-                            </div>
-                        </div>
-                        <div class="product-box product-wrap product-style-1">
-                            <div class="img-wrapper">
-                                <div class="lable-block"><span class="lable3">new</span> <span class="lable4">on
-                                        sale</span></div>
-                                <div class="front">
-                                    <a href="product-page(no-sidebar).html"><img
-                                                src="{{ asset('assets/front_end/assets/images/vegetables/pro/15.jpg') }}"
-                                                class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                </div>
-                                <div class="cart-info cart-wrap">
-                                    <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                            aria-hidden="true"></i></a>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                       title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                    <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                              aria-hidden="true"></i></a>
-                                </div>
-                                <div class="addtocart_btn">
-                                    <button class="add-button add_cart" title="Add to cart">
-                                        Add to Cart
-                                    </button>
-                                    <div class="qty-box cart_qty">
-                                        <div class="input-group">
-                                            <button type="button" class="btn quantity-left-minus" data-type="minus"
-                                                    data-field="">
-                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                            </button>
-                                            <input type="text" name="quantity"
-                                                   class="form-control input-number qty-input" value="1">
-                                            <button type="button" class="btn quantity-right-plus" data-type="plus"
-                                                    data-field="">
-                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-detail text-center">
-                                <a href="product-page(no-sidebar).html">
-                                    <h6>Slim Fit Cotton Shirt</h6>
-                                </a>
-                                <h4>$500.00</h4>
-                            </div>
-                        </div>
-                        <div class="product-box product-wrap product-style-1">
-                            <div class="img-wrapper">
-                                <div class="lable-block"><span class="lable3">new</span> <span class="lable4">on
-                                        sale</span></div>
-                                <div class="front">
-                                    <a href="product-page(no-sidebar).html"><img
-                                                src="{{ asset('assets/front_end/assets/images/vegetables/pro/16.jpg') }}"
-                                                class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                </div>
-                                <div class="cart-info cart-wrap">
-                                    <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart"
-                                                                                            aria-hidden="true"></i></a>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
-                                       title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-                                    <a href="compare.html" title="Compare"><i class="ti-reload"
-                                                                              aria-hidden="true"></i></a>
-                                </div>
-                                <div class="addtocart_btn">
-                                    <button class="add-button add_cart" title="Add to cart">
-                                        Add to Cart
-                                    </button>
-                                    <div class="qty-box cart_qty">
-                                        <div class="input-group">
-                                            <button type="button" class="btn quantity-left-minus" data-type="minus"
-                                                    data-field="">
-                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                            </button>
-                                            <input type="text" name="quantity"
-                                                   class="form-control input-number qty-input" value="1">
-                                            <button type="button" class="btn quantity-right-plus" data-type="plus"
-                                                    data-field="">
-                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-detail text-center">
-                                <a href="product-page(no-sidebar).html">
-                                    <h6>Slim Fit Cotton Shirt</h6>
-                                </a>
-                                <h4>$500.00 <del>$600.00</del></h4>
-                            </div>
-                        </div>
+                       @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- recently viewed section end -->
+
+    <!--modal popup start-->
+    <div class="modal fade bd-example-modal-lg theme-modal" id="exampleModal" tabindex="-1" role="dialog"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body modal1">
+                    <div class="container-fluid p-0">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="modal-bg">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <div class="offer-content"> <img src="{{ asset('assets/front_end/assets/images/Offer-banner.png') }}"
+                                                                     class="img-fluid blur-up lazyload" alt="">
+                                        <h2>newsletter</h2>
+                                        <form
+                                                action="https://pixelstrap.us19.list-manage.com/subscribe/post?u=5a128856334b598b395f1fc9b&amp;id=082f74cbda"
+                                                class="auth-form needs-validation" method="post"
+                                                id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                                                target="_blank">
+                                            <div class="form-group mx-sm-3">
+                                                <input type="email" class="form-control" name="EMAIL" id="mce-EMAIL"
+                                                       placeholder="Enter your email" required="required">
+                                                <button type="submit" class="btn btn-solid"
+                                                        id="mc-submit">subscribe</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--modal popup end-->
 @endsection
 
 @push('js')
+<script>
+    $(".details_direction").on("click", function () {
+
+        var product_id = $(this).attr('rel');
+
+        window.location.href = "http://localhost:8000/details/"+product_id;
+    })
+</script>
 @endpush
 

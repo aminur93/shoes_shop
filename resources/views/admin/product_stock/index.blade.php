@@ -118,9 +118,9 @@
                 '<label for="name" class="control-label">Name</label>'+
                 '<select name="product_id[]" id="product_id'+len+'" class="form-control">'+
                 '<option value="">Select Product</option>'+
-                '<?php foreach ($product as $p) ?>'+
+                '<?php foreach ($product as $p){ ?>'+
                 '<option value="{{ $p->id }}">{{ $p->name }}</option>'+
-                '<?php ?>'+
+                '<?php }?>'+
                 '</select>'+
                 ' </div>'+
                 '<div class="form-group col-md-3">'+

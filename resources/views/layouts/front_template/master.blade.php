@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="multikart">
     <meta name="keywords" content="multikart">
     <meta name="author" content="multikart">
+
     <link rel="icon" href="{{ asset('assets/front_end/assets/images/favicon/23.png') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('assets/front_end/assets/images/favicon/23.png') }}" type="image/x-icon">
-    <title>Kites Banfladesh</title>
+    <title>Kites Bangladesh</title>
 
     <!--Google font-->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
@@ -18,18 +20,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 
-    <!-- Icons -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/front_end/assets/css/vendors/fontawesome.css') }}">
-
     <!--Slick slider css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front_end/assets/css/vendors/slick.css') }}">
+
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front_end/assets/css/vendors/slick-theme.css') }}">
 
     <!-- Animate icon -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front_end/assets/css/vendors/animate.css') }}">
-
-    <!-- Themify icon -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/front_end/assets/css/vendors/themify-icons.css') }}">
 
     <!-- Bootstrap css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front_end/assets/css/vendors/bootstrap.css') }}">
@@ -37,207 +34,15 @@
     <!-- Theme css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front_end/assets/css/style.css') }}">
 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     @stack('css')
 
 </head>
 
 <body class="theme-color-11">
-
-
-<!-- loader start -->
-<div class="loader_skeleton">
-    <header class="header-style-5">
-        <div class="top-header top-header-theme">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="header-contact">
-                            <ul>
-                                <li>Welcome to Our store Multikart</li>
-                                <li><i class="fa fa-phone" aria-hidden="true"></i>Call Us: 123 - 456 - 7890</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 text-end">
-                        <ul class="header-dropdown">
-                            <li class="mobile-wishlist"><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                            </li>
-                            <li class="onhover-dropdown mobile-account"> <i class="fa fa-user" aria-hidden="true"></i>
-                                My Account
-                                <ul class="onhover-show-div">
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="register.html">register</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="main-menu">
-                        <div class="menu-left">
-                            <div class="navbar d-block d-xl-none">
-                                <a href="javascript:void(0)" id="toggle-sidebar-res">
-                                    <div class="bar-style"><i class="fa fa-bars sidebar-bar" aria-hidden="true"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="brand-logo">
-                                <a href="index.html"><img src="../assets/images/icon/logo/7.png"
-                                                          class="img-fluid blur-up lazyload" alt=""></a>
-                            </div>
-                        </div>
-                        <div>
-                            <form class="form_search" role="form">
-                                <input id="query search-autocomplete" type="search"
-                                       placeholder="Search any Vegetable or Grocery..." class="nav-search nav-search-field"
-                                       aria-expanded="true">
-                                <button type="submit" name="nav-submit-button" class="btn-search">
-                                    <i class="ti-search"></i>
-                                </button>
-                            </form>
-                        </div>
-                        <div class="menu-right pull-right">
-                            <div>
-                                <div class="icon-nav d-none d-sm-block">
-                                    <ul>
-                                        <li class="onhover-div mobile-search">
-                                            <div><img src="../assets/images/icon/search.png" onclick="openSearch()"
-                                                      class="img-fluid blur-up lazyload" alt=""> <i class="ti-search"
-                                                                                                    onclick="openSearch()"></i></div></li>
-                                        <li class="onhover-div mobile-setting">
-                                            <div><img src="../assets/images/icon/setting.png"
-                                                      class="img-fluid blur-up lazyload" alt=""> <i
-                                                        class="ti-settings"></i></div></li>
-                                        <li class="onhover-div mobile-cart">
-                                            <div><img src="../assets/images/icon/cart.png"
-                                                      class="img-fluid blur-up lazyload" alt=""> <i
-                                                        class="ti-shopping-cart"></i></div>
-                                            <span class="cart_qty_cls">2</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bottom-part">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-3 category-menu d-none d-xl-block">
-                        <div class="toggle-sidebar">
-                            <i class="fa fa-bars sidebar-bar"></i>
-                            <h5 class="mb-0">shop by category</h5>
-                        </div>
-                    </div>
-                    <div class="col-xl-9">
-                        <div class="main-nav-center">
-                            <nav class="text-start">
-                                <div class="toggle-nav"><i class="fa fa-bars sidebar-bar"></i></div>
-                                <ul class="sm pixelstrap sm-horizontal">
-                                    <li>
-                                        <div class="mobile-back text-end">Back<i class="fa fa-angle-right ps-2"
-                                                                                 aria-hidden="true"></i></div>
-                                    </li>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li class="mega" >
-                                        <a href="#">feature <div class="lable-nav">new</div></a></li>
-                                    <li><a href="#">shop</a> </li>
-                                    <li><a href="#">product</a></li>
-                                    <li><a href="#">pages</a></li>
-                                    <li><a href="#">blog</a> </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section class="small-section pt-res-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-3">
-                    <div class="sidenav marketplace-sidebar svg-icon-menu">
-                        <nav>
-                            <div>
-                                <div class="sidebar-back text-start d-xl-none d-block"><i class="fa fa-angle-left pe-2"
-                                                                                          aria-hidden="true"></i> Back</div>
-                            </div>
-                            <ul class="sm pixelstrap sm-vertical">
-                                <li><a href="#"><div class="ldr-img-icon"></div><div class="ldr-text"></div></a></li>
-                                <li><a href="#"><div class="ldr-img-icon"></div><div class="ldr-text"></div></a></li>
-                                <li><a href="#"><div class="ldr-img-icon"></div><div class="ldr-text"></div></a></li>
-                                <li><a href="#"><div class="ldr-img-icon"></div><div class="ldr-text"></div></a></li>
-                                <li><a href="#"><div class="ldr-img-icon"></div><div class="ldr-text"></div></a></li>
-                                <li><a href="#"><div class="ldr-img-icon"></div><div class="ldr-text"></div></a></li>
-                                <li><a href="#"><div class="ldr-img-icon"></div><div class="ldr-text"></div></a></li>
-                                <li><a href="#"><div class="ldr-img-icon"></div><div class="ldr-text"></div></a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-xl-9">
-                    <section class="pt-0 small-slider">
-                        <div class="home-slider">
-                            <div class="home"></div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="service-w-bg tools-service  pt-0">
-        <div class="container">
-            <div class="service p-0 ">
-                <div class="row margin-default">
-                    <div class="col-xl-3 col-sm-6 service-block">
-                        <div class="media">
-                            <svg class="bg-white"></svg>
-                            <div class="media-body">
-                                <h4></h4>
-                                <p></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 service-block">
-                        <div class="media">
-                            <svg class="bg-white"></svg>
-                            <div class="media-body">
-                                <h4></h4>
-                                <p></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 service-block">
-                        <div class="media">
-                            <svg class="bg-white"></svg>
-                            <div class="media-body">
-                                <h4></h4>
-                                <p></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 service-block">
-                        <div class="media">
-                            <svg class="bg-white"></svg>
-                            <div class="media-body">
-                                <h4></h4>
-                                <p></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-<!-- loader end -->
-
 
 <!-- header start -->
 @include('layouts.front_template.header')
@@ -248,46 +53,6 @@
 <!-- footer start -->
 @include('layouts.front_template.foorter')
 <!-- footer end -->
-
-
-<!--modal popup start-->
-<div class="modal fade bd-example-modal-lg theme-modal" id="exampleModal" tabindex="-1" role="dialog"
-     aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body modal1">
-                <div class="container-fluid p-0">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="modal-bg">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <div class="offer-content"> <img src="{{ asset('assets/front_end/assets/images/Offer-banner.png') }}"
-                                                                 class="img-fluid blur-up lazyload" alt="">
-                                    <h2>newsletter</h2>
-                                    <form
-                                            action="https://pixelstrap.us19.list-manage.com/subscribe/post?u=5a128856334b598b395f1fc9b&amp;id=082f74cbda"
-                                            class="auth-form needs-validation" method="post"
-                                            id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-                                            target="_blank">
-                                        <div class="form-group mx-sm-3">
-                                            <input type="email" class="form-control" name="EMAIL" id="mce-EMAIL"
-                                                   placeholder="Enter your email" required="required">
-                                            <button type="submit" class="btn btn-solid"
-                                                    id="mc-submit">subscribe</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--modal popup end-->
-
 
 <!-- Quick-view modal popup start-->
 <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view" tabindex="-1" role="dialog"
@@ -363,6 +128,7 @@
 
 <!-- slick js-->
 <script src="{{ asset('assets/front_end/assets/js/slick.js') }}"></script>
+
 <script src="{{ asset('assets/front_end/assets/js/slick-animation.min.js') }}"></script>
 
 <!-- menu js-->
@@ -372,18 +138,16 @@
 <script src="{{ asset('assets/front_end/assets/js/lazysizes.min.js') }}"></script>
 
 <!-- Timer js-->
-<script src="{{ asset('assets/front_end/assets/js/timer.js') }}"></script>
+{{--<script src="{{ asset('assets/front_end/assets/js/timer.js') }}"></script>--}}
 
 <!-- Bootstrap js-->
 <script src="{{ asset('assets/front_end/assets/js/bootstrap.bundle.min.js') }}"></script>
 
-<!-- Bootstrap Notification js-->
-<script src="{{ asset('assets/front_end/assets/js/bootstrap-notify.min.js') }}"></script>
-
-<!-- Theme js-->
-<script src="{{ asset('assets/front_end/assets/js/theme-setting.js') }}"></script>
 <script src="{{ asset('assets/front_end/assets/js/script.js') }}"></script>
+
 <script src="{{ asset('assets/front_end/assets/js/custom-slick-animated.js') }}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 
 <script>
@@ -400,6 +164,63 @@
         document.getElementById("search-overlay").style.display = "none";
     }
 </script>
+
+<script>
+    $(document).ready(function () {
+
+        var session_id = sessionStorage.getItem('cart_token');
+
+        $.ajax({
+            url : "{{ route('get_cart') }}",
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            type: "get",
+            data: {session_id:session_id},
+            dataType: "json",
+            success: function (data) {
+
+                if (data.cart === '')
+                {
+                    $("#cart_data").append('<p>Cart is Empty</p>')
+                }else {
+                    var cartItem = data.cart;
+
+                    var cartData = '';
+
+                    $.each(cartItem, function (key, value) {
+                        cartData +=
+                            '<li id="cart_details">'+
+                            '<div class="media">'+
+                            '<a href="#"><img alt="" class="me-3" src="http://localhost:8000/assets/admin/uploads/product/small/'+value.image+'"></a>'+
+                            '<div class="media-body">'+
+                            '<a href="#">'+
+                            '<h4>'+value.product_title+'</h4>'+
+                            '</a>'+
+                            '<h4><span>'+value.product_quantity+' x  &#2547; '+value.price+'</span></h4>'+
+                            '</div>'+
+                            '</div>'+
+                            '<div class="close-circle"><a href="#"><i class="fa fa-times"aria-hidden="true"></i></a></div>'+
+                            '</li>'
+                    });
+
+                    $("#cart_data").append(
+                        cartData+''+
+                        '<li>'+
+                        '<div class="total">'+
+                        '<h5>subtotal : <span> &#2547; '+data.sub_total+'</span></h5>'+
+                        '</div>'+
+                        '</li>'
+                    )
+
+                    $("#cart_count").append(data.cart_total);
+                }
+
+
+            }
+        })
+    });
+
+</script>
+
 
 @stack('js')
 
