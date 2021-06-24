@@ -13,13 +13,17 @@
                 </div>
                 <div class="col-lg-6 text-end">
                     <ul class="header-dropdown">
-                        <li class="mobile-wishlist"><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                        </li>
+
                         <li class="onhover-dropdown mobile-account"> <i class="fa fa-user" aria-hidden="true"></i>
+                            @if(auth('customer')->user())
+                                {{ auth('customer')->user()->name }}
+                            @else
                             My Account
+                            @endif
+
                             <ul class="onhover-show-div">
                                 @if(auth('customer')->user())
-                                    <li><a href="">Profile</a></li>
+                                    <li><a href="{{ route('customer.dashboard') }}">Profile</a></li>
                                     <li><a href="{{ route('customer_logout') }}">Logout</a></li>
                                 @else
                                 <li><a href="{{ route('customer.login') }}">Login</a></li>

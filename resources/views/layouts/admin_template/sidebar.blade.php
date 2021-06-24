@@ -86,6 +86,24 @@
                     </ul>
                 </li>
 
+                <li class="nav-item has-treeview {{ Request::routeIs('order','order.invoice','order.details') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::routeIs('order','order.invoice','order.details') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-shopping-bag"></i>
+                        <p>
+                            Orders
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('order') }}" class="nav-link {{ Request::routeIs('order','order.invoice','order.details') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Order</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="nav-item has-treeview {{ Request::routeIs('slider','slider.create','slider.edit') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ Request::routeIs('slider','slider.create','slider.edit') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-shopping-bag"></i>

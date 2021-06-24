@@ -29,6 +29,10 @@ Route::group(['middleware' => 'customer'], function() {
     Route::post('order_place','OrderController@orderPlace')->name('order_place');
     Route::post('order','OrderController@order')->name('order');
     /*check out route end*/
+
+    /*customer dashboard route start*/
+    Route::get('customer/dashboard','CustomerController@index')->name('customer.dashboard');
+    /*customer dashboard route end*/
 });
 
 /*add to cart route start*/
@@ -148,6 +152,14 @@ Route::group(['middleware' => 'auth'], function (){
     Route::delete('banner/destroy/{id}','Admin\BannerController@destroy')->name('banner.destroy');
     Route::get('banner/status_change/{id}', 'Admin\BannerController@status_change')->name('banner.status_change');
     /*banner setup route end*/
+
+    /*order route start*/
+    Route::get('order','OrderController@index')->name('order');
+    Route::get('order/getData','OrderController@getData')->name('order.getData');
+    Route::get('order/confirm_status/{id}','OrderController@confirm_status')->name('order.confirm_status');
+    Route::get('order/details/{id}','OrderController@details')->name('order.details');
+    Route::get('order/invoice/{id}','OrderController@invoice')->name('order.invoice');
+    /*order route end*/
 
 });
 

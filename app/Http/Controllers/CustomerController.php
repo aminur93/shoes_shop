@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\DB;
 
 class CustomerController extends Controller
 {
+    public function index()
+    {
+        $logo = Logo::where('status','=',1)->latest()->first();
+
+        $banner = Banner::where('status','=',1)->latest()->first();
+
+        return view('customer_dashboard',compact('logo','banner'));
+    }
+
+
     public function login()
     {
         $logo = Logo::where('status','=',1)->latest()->first();

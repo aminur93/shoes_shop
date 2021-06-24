@@ -127,25 +127,31 @@
                                                 <ul>
                                                     <li>
                                                         <div class="radio-option">
-                                                            <input type="radio" name="payment-group" value="card" id="card" checked="checked">
-                                                            <label for="payment-1">Card<span class="small-text">Please send a check to StoreName, Store Street, Store Town, Store State /County, Store Postcode.</span></label>
+                                                            <input type="radio" name="payment-group" value="card" id="payment-1"
+                                                                   checked="checked">
+                                                            <label for="payment-1">Card<span
+                                                                        class="small-text">Please send a check to Store
+                                                                    Name, Store Street, Store Town, Store State /
+                                                                    County, Store Postcode.</span></label>
                                                         </div>
                                                     </li>
-
                                                     <li>
                                                         <div class="radio-option">
-                                                            <input type="radio" name="payment-group" value="cod" id="cod">
-                                                            <label for="payment-2">Cash On Delivery<span class="small-text">Please send a check to StoreName, Store Street, Store Town, Store State /County, Store Postcode.</span></label>
+                                                            <input type="radio" name="payment-group" id="payment-2" value="cod">
+                                                            <label for="payment-2">Cash On Delivery<span
+                                                                        class="small-text">Please send a check to Store
+                                                                    Name, Store Street, Store Town, Store State /
+                                                                    County, Store Postcode.</span></label>
                                                         </div>
                                                     </li>
-
                                                     <li>
                                                         <div class="radio-option paypal">
-                                                            <input type="radio" name="payment-group" value="paypal" id="paypal">
-                                                            <label for="payment-3">PayPal<span class="image"><img src="{{ asset('assets/front_end/assets/images/paypal.png') }}" alt=""></span></label>
+                                                            <input type="radio" name="payment-group" id="payment-3">
+                                                            <label for="payment-3">PayPal<span class="image"><img
+                                                                            src="../assets/images/paypal.png"
+                                                                            alt=""></span></label>
                                                         </div>
                                                     </li>
-
                                                 </ul>
                                             </div>
                                         </div>
@@ -173,6 +179,10 @@
 
         var grand_total = $("#grand_total").attr('rel1');
 
+        var card = $("#payment-1").val();
+
+        var cod = $("#payment-2").val();
+
         var first_name = $("#first_name").val();
         var last_name = $("#last_name").val();
         var email = $("#email").val();
@@ -191,6 +201,8 @@
                 order_place_id:order_place_id,
                 sub_total:sub_total,
                 grand_total:grand_total,
+                card:card,
+                cod:cod,
                 first_name:first_name,
                 last_name:last_name,
                 email:email,

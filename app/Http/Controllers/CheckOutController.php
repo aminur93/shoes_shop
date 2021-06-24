@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Banner;
+use App\Cart;
 use App\Http\Controllers\Controller;
 use App\Logo;
 use Illuminate\Http\Request;
@@ -21,7 +22,7 @@ class CheckOutController extends Controller
 
         $order_place = DB::table('order_place')->where('order_place.user_id',$user_id)->first();
 
-        $order_details = DB::table('order_details')->where('order_place_id',$order_place->id)->get();
+        $order_details = Cart::where('user_id', $user_id)->latest()->get();
 
 
         return view('checkout',compact('logo','banner','order_place','order_details'));
